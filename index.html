@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 style="text-align: center; margin-top:2cm;">WELCOME TO LOGIN PAGE</h1>
+    <br>
+    <div style="text-align: center;"><h6>If you want to check so use {userName, password and usertype} one by one given below </h6>
+        userName:"principle@gmail.com",
+        password: "p123",
+        usertype: "principle"<br><br>
+        userName:"teacher@gmail.com",
+        password: "t123",
+        usertype: "teacher"<br><br>
+        userName:"student@gmail.com",
+        password: "s123",
+        usertype: "student"
+    </div>
+    <div class="container col-lg-12 col-md-12 col-12 col-md-8 col-md-offset-2">
+        <br>
+        Enter Email:
+        <input type="email" class="form-control" name="" id="userName"><br>
+        Enter Pass:
+        <input type="password" class="form-control" name="" id="password"><br>
+        Select User Type:
+        <select id="usertype" class="form-control">
+            <option value="principle">Principle</option>
+            <option value="teacher">Teacher</option>
+            <option value="student">Student</option>
+        </select>
+        <br>
+        <button type="button" class="form-control btn btn-primary" onclick="login()">Login</button>
+    </div>
+
+    <script>
+
+        var newFeed = [
+            {
+                userName: "principle@gmail.com",
+                password: "p123",
+                usertype: "principle"
+            },
+            {
+                userName: "teacher@gmail.com",
+                password: "t123",
+                usertype: "teacher"
+            },
+            {
+                userName: "student@gmail.com",
+                password: "s123",
+                usertype: "student"
+            },
+
+        ]
+
+
+        function login() {
+            var x = document.getElementById("userName").value;
+            var y = document.getElementById("password").value;
+            var z = document.getElementById("usertype").value;
+
+
+            if (x == newFeed[0].userName && y == newFeed[0].password && z == newFeed[0].usertype) {
+                window.location.href = "principle.html";
+                // alert("success");
+            }
+            else if (x == newFeed[1].userName && y == newFeed[1].password && z == newFeed[1].usertype) {
+                window.location.href = "teacher.html";
+                // alert("success");
+            }
+            else if (x == newFeed[2].userName && y == newFeed[2].password && z == newFeed[2].usertype) {
+                window.location.href = "student.html";
+                // alert("success");
+            }
+
+            else {
+                window.location.href = "login.html";
+                alert("You have entered wrong id and pass")
+            }
+        }
+    </script>
+</body>
+
+</html>
